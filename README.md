@@ -9,8 +9,10 @@ Telegram https://t.me/v2boardapp
 ![]() <img src="https://user-images.githubusercontent.com/120090629/206408445-9aeea4aa-ddb6-4405-9fa5-aa5cba992f55.png"  width="120">
 ![]() <img src="https://user-images.githubusercontent.com/120090629/206408455-23912b5c-fe74-4cb9-a8fe-145f57988f00.jpg"  width="120">
 
+
 English
 Smart iOS client for v2board and sspanel panels
+Telegram https://t.me/v2boardapp
 
 ![]() <img src="https://user-images.githubusercontent.com/120090629/206410468-e2d5eb24-e2ea-4240-85d7-d8f1e7fcbb11.png"  width="120">
 ![]() <img src="https://user-images.githubusercontent.com/120090629/206410492-009c5622-f241-413b-b912-2a81bfca5294.png"  width="120">
