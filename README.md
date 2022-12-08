@@ -1,5 +1,5 @@
 # V2board-SSPANEL-IOS
-适用于 v2board 和 sspanel 面板的智能 iOS 客户端
+适用于 v2board 和 sspanel 面板的智能 iOS 客户端  
 Telegram https://t.me/v2boardapp  
 Email skynetwork@duck.com  
 
@@ -12,8 +12,8 @@ Email skynetwork@duck.com
 ![]() <img src="https://user-images.githubusercontent.com/120090629/206408455-23912b5c-fe74-4cb9-a8fe-145f57988f00.jpg"  width="120">
 
 
-English
-Smart iOS client for v2board and sspanel panels
+English  
+Smart iOS client for v2board and sspanel panels  
 Telegram https://t.me/v2boardapp
 
 ![]() <img src="https://user-images.githubusercontent.com/120090629/206410468-e2d5eb24-e2ea-4240-85d7-d8f1e7fcbb11.png"  width="120">
