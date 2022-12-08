@@ -1,5 +1,5 @@
 # V2board-SSPANEL-IOS
-用于 v2board 和 sspanel 面板的智能 iOS 客户端
+适用于 v2board 和 sspanel 面板的智能 iOS 客户端
 Telegram https://t.me/v2boardapp
 
 
