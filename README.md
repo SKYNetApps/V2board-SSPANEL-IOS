@@ -15,6 +15,7 @@ Email skynetwork@duck.com
 English  
 Smart iOS client for v2board and sspanel panels  
 Telegram https://t.me/v2boardapp  
+Email skynetwork@duck.com  
 
 One-click login to use Create account｜Reset password｜Invitation code｜Announcement｜Knowledge base Crisp customer service.
 
