@@ -8,7 +8,7 @@ Email skynetwork@duck.com
 
 全新2.0
 
-![]() <img src="https://user-images.githubusercontent.com/120090629/233845688-40041599-b6ad-4d6f-ab20-f6487c4e441b.png"  width="120">
+![]() <img src="https://user-images.githubusercontent.com/120090629/233845688-40041599-b6ad-4d6f-ab20-f6487c4e441b.png"  width="2000">
 
 
 ![]() <img src="https://user-images.githubusercontent.com/120090629/206408391-e20f177f-c96f-4e73-83d3-960249e80d89.png"  width="120">
@@ -28,7 +28,7 @@ Email skynetwork@duck.com
 
 New 2.0
 
-![]() <img src="https://user-images.githubusercontent.com/120090629/233845688-40041599-b6ad-4d6f-ab20-f6487c4e441b.png"  width="120">
+![]() <img src="https://user-images.githubusercontent.com/120090629/233845688-40041599-b6ad-4d6f-ab20-f6487c4e441b.png"  width="2000">
 
 
 One-click login to use Create account｜Reset password｜Invitation code｜Announcement｜Knowledge base Crisp customer service.
