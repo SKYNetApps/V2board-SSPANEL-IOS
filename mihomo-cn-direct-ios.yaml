@@ -1,0 +1,115 @@
+mixed-port: 7890
+allow-lan: true
+bind-address: "*"
+mode: rule
+log-level: info
+external-controller: 127.0.0.1:9090
+
+dns:
+  enable: true
+  ipv6: false
+  default-nameserver:
+    - 223.5.5.5
+    - 223.6.6.6
+    - 119.29.29.29
+    - 114.114.114.114
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  use-hosts: true
+  fallback-lazy-query: true
+  fake-ip-filter:
+    - "*.lan"
+    - "*.local"
+    - "*.localhost"
+    - "*.test"
+    - "localhost.ptlogin2.qq.com"
+    - "+.stun.*.*"
+    - "+.stun.*.*.*"
+    - "+.stun.*.*.*.*"
+    - "lens.l.google.com"
+    - "*.srv.nintendo.net"
+    - "+.stun.playstation.net"
+    - "xbox.*.*.microsoft.com"
+    - "*.*.xboxlive.com"
+    - "+.msftncsi.com"
+    - "+.msftconnecttest.com"
+  nameserver:
+    - https://223.5.5.5/dns-query
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+  proxy-server-nameserver:
+    - https://223.5.5.5/dns-query
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query#h3=true
+    - tls://dns.alidns.com
+    - tls://223.5.5.5:853
+  fallback:
+    - https://dns.alidns.com/dns-query#h3=true
+    - https://223.5.5.5/dns-query
+    - https://223.6.6.6/dns-query
+    - https://doh-pure.onedns.net/dns-query
+    - https://ada.openbld.net/dns-query
+    - https://doh.dns.sb/dns-query
+    - https://dns.cloudflare.com/dns-query
+    - https://dns.twnic.tw/dns-query
+    - tls://8.8.4.4:853
+    - 119.29.29.29
+    - 223.5.5.5
+
+proxies:
+
+proxy-groups:
+  # 「自动选择」(url-test) 与「故障转移」(fallback) 由后端按开关动态注入，此处不再硬编码
+  - { name: "$app_name", type: select, proxies: [] }
+
+rule-providers:
+  # 广告域名
+  ads-domain:
+    type: http
+    behavior: domain
+    format: mrs
+    path: ./ruleset/ads-domain.mrs
+    url: https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-ads-all.mrs
+    interval: 86400
+
+  # 中国域名
+  cn-domain:
+    type: http
+    behavior: domain
+    format: mrs
+    path: ./ruleset/cn-domain.mrs
+    url: https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cn.mrs
+    interval: 86400
+
+  # 中国 IP
+  cn-ip:
+    type: http
+    behavior: ipcidr
+    format: mrs
+    path: ./ruleset/cn-ip.mrs
+    url: https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/cn.mrs
+    interval: 86400
+
+rules:
+  # 局域网 / 私有地址直连
+  - DOMAIN,injections.adguard.org,DIRECT
+  - DOMAIN,local.adguard.org,DIRECT
+  - DOMAIN-SUFFIX,local,DIRECT
+  - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+  - IP-CIDR,169.254.0.0/16,DIRECT,no-resolve
+  - IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
+  - IP-CIDR,224.0.0.0/4,DIRECT,no-resolve
+  - IP-CIDR6,fe80::/10,DIRECT,no-resolve
+
+  # 去广告：优先级必须高于中国直连
+  - RULE-SET,ads-domain,REJECT
+
+  # 中国域名 / 中国 IP 直连
+  - RULE-SET,cn-domain,DIRECT
+  - RULE-SET,cn-ip,DIRECT,no-resolve
+
+  # 其余全部代理
+  - MATCH,$app_name
