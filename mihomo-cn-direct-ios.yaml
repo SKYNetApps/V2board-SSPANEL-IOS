@@ -53,8 +53,6 @@ dns:
     - https://dns.cloudflare.com/dns-query
     - https://dns.twnic.tw/dns-query
     - tls://8.8.4.4:853
-    - 119.29.29.29
-    - 223.5.5.5
 
 proxies:
 
